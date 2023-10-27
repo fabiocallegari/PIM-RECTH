@@ -6,6 +6,11 @@ let nome = document.querySelector('#nome')
 let labelNome = document.querySelector('#labelNome')
 let validNome = false
 
+let email = document.querySelector('#email')
+let labelEmail = document.querySelector('#labelEmail')
+let validEmail = false
+
+
 let usuario = document.querySelector('#usuario')
 let labelUsuario = document.querySelector('#labelUsuario')
 let validUsuario = false
@@ -24,7 +29,7 @@ let msgSuccess = document.querySelector('#msgSuccess')
 nome.addEventListener('keyup', () => {
   if(nome.value.length <= 2){
     labelNome.setAttribute('style', 'color: red')
-    labelNome.innerHTML = 'Nome *Insira no minimo 3 caracteres'
+    labelNome.innerHTML = 'Nome *Insira no mínimo 3 caracteres'
     nome.setAttribute('style', 'border-color: red')
     validNome = false
   } else {
@@ -38,7 +43,7 @@ nome.addEventListener('keyup', () => {
 usuario.addEventListener('keyup', () => {
   if(usuario.value.length <= 4){
     labelUsuario.setAttribute('style', 'color: red')
-    labelUsuario.innerHTML = 'Usuário *Insira no minimo 5 caracteres'
+    labelUsuario.innerHTML = 'Usuário *Insira no mínimo 5 caracteres'
     usuario.setAttribute('style', 'border-color: red')
     validUsuario = false
   } else {
@@ -49,10 +54,25 @@ usuario.addEventListener('keyup', () => {
   }
 })
 
+email.addEventListener('keyup', () => {
+  let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  if(!emailRegex.test(email.value)){
+    labelEmail.setAttribute('style', 'color: red')
+    labelEmail.innerHTML = 'E-mail *Insira um e-mail válido'
+    email.setAttribute('style', 'border-color: red')
+    validEmail = false
+  } else {
+    labelEmail.setAttribute('style', 'color: green')
+    labelEmail.innerHTML = 'E-mail'
+    email.setAttribute('style', 'border-color: green')
+    validEmail = true
+  }
+})
+
 senha.addEventListener('keyup', () => {
   if(senha.value.length <= 5){
     labelSenha.setAttribute('style', 'color: red')
-    labelSenha.innerHTML = 'Senha *Insira no minimo 6 caracteres'
+    labelSenha.innerHTML = 'Senha *Insira no mínimo 6 caracteres'
     senha.setAttribute('style', 'border-color: red')
     validSenha = false
   } else {
@@ -98,7 +118,7 @@ function cadastrar(){
     msgError.innerHTML = ''
     
     setTimeout(()=>{
-        window.location.href = 'https://cdpn.io/thicode/debug/ZELzYxV/dXAqBaRyvwJk'
+        window.location.href = 'http://127.0.0.1:5500/index.html'
     }, 3000)
   
     

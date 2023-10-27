@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="gradient-custom" >
-  <form action="pages/PainelRh.html" id="login-form">
+    <div id='msgSuccess'></div>
+    <div id='msgError'></div>
           <div class="container bg-dark text-white text-center" id="containerLogin">
             <div class="container text-center" >
                 <div class="logo">
@@ -22,9 +23,8 @@
                 </div>
                 <div class="form-outline form-white mb-4" >
                   <input type="password" id="Senhalogin" class="form-control form-control-lg text-center" required placeholder="Senha"  />
-                  <i class="fa fa-eye" aria-hidden="true"></i>
                 </div>
-                <button class="btn btn-outline-success btn-lg px-5" type="submit">LOGIN</button>
+                <button class="btn btn-outline-success btn-lg px-5" onclick='entrar()'>LOGIN</button>
                 <p class="mb-0 mt-5"> Não possui cadastro ? <a href="pages/Cadastro.html" class="text-warning text-decoration-none fw-bold">Solicite Aqui</a></p>
               </form>
             </div>
